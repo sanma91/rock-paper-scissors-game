@@ -30,7 +30,6 @@ function humanWinner() {
     if(humanScore === 5) {
         winner.textContent = "";
         gameWinner.textContent = "You won the game! " + humanScore + " at " + computerScore + "!";
-        console.log("You won the game! " + humanScore + " at " + computerScore + "!");
         resetGame();
     }
 }
@@ -39,7 +38,6 @@ function computerWinner() {
     if(computerScore === 5) {
         winner.textContent = "";
         gameWinner.textContent = "Computer won the game! " + computerScore + " at " + humanScore + "!";
-        console.log("Computer won the game! " + computerScore + " at " + humanScore + "!");
         resetGame();
     }
 }
@@ -53,26 +51,18 @@ function resetGame() {
 
 function rockButton() {
     let computerChoice = values[Math.floor(Math.random() * values.length)];
-    console.log(computerChoice);
     if(computerChoice === "rock") {
-        console.log("Tie");
         winner.textContent = "Tie";
     }
     else if(computerChoice === "paper") {
-        console.log("You lose");
         winner.textContent = "You lose";
         computerScore++;
         displayComputerScore.textContent = computerScore;
-        console.log(humanScore);
-        console.log(computerScore);
     }
     else if(computerChoice === "scissors") {
-    console.log("You win");
     winner.textContent = "You win";
     humanScore++;
     displayHumanScore.textContent = humanScore;
-    console.log(humanScore);
-    console.log(computerScore);
     }
     humanWinner();
     computerWinner();
@@ -81,26 +71,18 @@ function rockButton() {
 const paper = document.querySelector("#paper");
 function paperButton() {
     let computerChoice = values[Math.floor(Math.random() * values.length)];
-    console.log(computerChoice);
     if(computerChoice === "rock") {
-        console.log("You win");
         winner.textContent = "You win";
         humanScore++;
         displayHumanScore.textContent = humanScore;
-        console.log(humanScore);
-        console.log(computerScore);
     }
     else if(computerChoice === "paper") {
-        console.log("Tie");
         winner.textContent = "Tie";
     }
     else if(computerChoice === "scissors") {
-    console.log("You lose");
     winner.textContent = "You lose";
     computerScore++;
     displayComputerScore.textContent = computerScore;
-    console.log(humanScore);
-    console.log(computerScore);
     }
     humanWinner();
     computerWinner();
@@ -109,25 +91,17 @@ function paperButton() {
 const scissors = document.querySelector("#scissors");
 function scissorsButton() {
     let computerChoice = values[Math.floor(Math.random() * values.length)];
-    console.log(computerChoice);
     if(computerChoice === "rock") {
-        console.log("You lose");
         winner.textContent = "You lose";
         computerScore++;
         displayComputerScore.textContent = computerScore;
-        console.log(humanScore);
-        console.log(computerScore);
     }
     else if(computerChoice === "paper") {
-        console.log("You win");
         winner.textContent = "You win";
         humanScore++;
         displayHumanScore.textContent = humanScore;
-        console.log(humanScore);
-        console.log(computerScore);
     }
     else if(computerChoice === "scissors") {
-    console.log("Tie");
     winner.textContent = "Tie";
     }
     humanWinner();
